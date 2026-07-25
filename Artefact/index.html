@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaving Cert Coursework 2025</title>
+    <link rel="stylesheet" href="style.css">  
+</head>
+<body>
+    <div id="sidebar">
+        <h2>Menu</h2>    <!--These are the variable names for side bar buttons, each refers to a unique name so I can configure the specific task to perform when the button is clicked -->
+        <button id="form_1" onclick="showHousePrices()">Show House Prices Over times Graph</button>
+        <button id="form_2" onclick="showHCB()">Show Housing Cost Overburden Graph</button>
+        <button id="form_3" onclick="showAverageRent()">Show Monthly Average Rent Graph</button>
+        <button id="form_4" onclick="showForm()">Personal Information Input Form</button>
+        <button id="recommendationBtn" onclick="showRec()">Rental Budget Recommendation</button>
+        <button id="table" onclick="showTable()">Flatmate Contact Table</button>
+    </div>
+    
+    <div id="content">
+        <h1>Housing Data Hub</h1>
+        <!---hyperlink to different svg graphs I created from csv datasets, shown them on the webpage-->
+        <!--# Embedding in a web page — pygal 2.0.0 documentation from https://www.pygal.org/en/stable/documentation/web.html-->
+        <div id="svgContainer_1" style="display: none;">
+            <object id="house_prices_svg" type="image/svg+xml" data="img/house_prices_by_area.svg"></object>
+        </div>
+
+        <div id="svgContainer_2" style="display: none;">
+            <object id="HCB_2017_svg" type="image/svg+xml" data="img/HCB_2017.svg"></object>
+            <object id="HCB_2018_svg" type="image/svg+xml" data="img/HCB_2018.svg"></object>
+            <object id="HCB_2019_svg" type="image/svg+xml" data="img/HCB_2019.svg"></object>
+            <object id="HCB_2020_svg" type="image/svg+xml" data="img/HCB_2020.svg"></object>
+            <object id="HCB_2021_svg" type="image/svg+xml" data="img/HCB_2021.svg"></object>
+            <object id="HCB_2022_svg" type="image/svg+xml" data="img/HCB_2022.svg"></object>
+        </div>
+
+        <div id="svgContainer_3" style="display: none;">
+            <object id="average_rent_svg" type="image/svg+xml" data="img/average_monthly_rent_.svg"></object>
+        </div>
+        
+
+
+        
+        <div id="Form">
+            <!--Description to the flatmate finding form, help the user to understand it's function-->
+            <h4>This table helps individuals find flatmates to share rent during the current housing crisis. Those with similar rental needs can connect by providing personal details, budget, and contact information through this tool</h3>
+            <form>   <!--Input boxes-->
+                <label for="name">Please Enter Your Name:</label>
+                <input type="text" placeholder="Name" id="nameInput" name="name" class = field>
+                <br><br>
+                <label for="dob">Please Enter Your Birthday:</label>
+                <input type="date" placeholder="DOB" id="dobInput" name="dob" class = field>
+                <br><br>
+                <label for="budget">Please Enter Your Monthly Rental Budget:</label>
+                <input type="number" placeholder="Unit: €" id="budgetInput" name="budget" class = field>
+                <br><br>
+                <label for="gender">Please Enter Your Gender:</label>
+                <select id="genderInput" name="gen" class="field">
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                    <option value="O">Other</option>
+
+                </select>
+                <br><br>
+                <label for="area">Please Enter Your Location:</label>
+                <input type="text" placeholder="County" id="areaInput" name="Area" class = field>
+                <br><br>
+                <label for="contact">Please Enter Your Email:</label>
+                <input type="text" placeholder="name@example.com" id="emailInput" name="Contact" class = field>
+                <br><br>
+            </form>
+            <!--Submit button, data push to the Firebase after the button clicked-->
+            <button type="submit" id="uploadData">Upload To Firebase</button>
+            <br><br>
+        </div>
+        <!--Rental Budget Recommendation tool-->
+        <div id="recommendation" style="display: none;">
+            <!--Description to help the user better understand it's function-->
+            <h3>Enter the details below to quick check if you can afford the rent </h3>
+            <label for="recLocInput">Enter your desired rental location:</label>
+            <select id = location class = field>
+                <option value="D">Dublin</option>
+                <option value="G">Galway</option>
+                <option value="C">Cork</option>
+                <option value="O">Any Other Areas</option>
+            </select>
+            <div style="display: block; text-align: center; margin-top: 30px;">
+            <label for="recBudgetInput">Enter your monthly rental budget:</label>
+            <input type="number" id="recBudgetInput" placeholder="Enter budget in €" class="field">
+            </div>
+
+            <div style="display: block; text-align: center; margin-top: 30px;">
+            <!--User data push to the javascript algorithm for processing -->
+            <button onclick="generateBudgetRecommendation()">Get Recommendation</button>
+            </div>
+            <!--display recommendation text-->
+            <p id="BudgetRecommendationText"></p>
+            
+        </div>
+        
+       <!--The Contact Table-->
+        <div id="Table">
+             <!--A counter that tracks how many users had provided their information to the table-->
+            <h3 id="totalUsers">Total Registered Users = 0</h3>
+            <table id="allRecords" width="35%">
+                <tr>
+                    <!--each varaible refers to a column contain corresponding data-->
+                    <th style="text-align:center">Name</th>
+                    <th style="text-align:center">Date Of Birth</th>
+                    <th style="text-align:center">Budget</th>
+                    <th style="text-align:center">Gender</th>
+                    <th style="text-align:center">Location</th>
+                    <th style="text-align:center">Emails</th>
+                    
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase.js"></script>
+
+<script src="control.js"></script>

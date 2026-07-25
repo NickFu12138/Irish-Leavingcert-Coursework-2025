@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 100%;
+            background: #333;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 30px;
+            margin-top: 19px;
+        }
+        .sidebar a:hover {
+            background: #575757;
+        }
+        .content {
+            margin-left: 220px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        @font-face {
+        font-family: 'Adlam Display';
+        src: url('fonts/ADLaMDisplay-Regular.ttf') format('truetype');
+        }
+        h1 {
+            text-align: center;
+            font-family: 'Adlam Display', cursive; 
+            font-size: 36px;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 90px;
+        }
+        h2{
+            margin-top: 30px;
+            margin-bottom: 30px;
+
+
+        }
+        .log{
+            text-align: center;
+            margin-top: 90px;
+            margin-bottom: 90px;
+
+        }
+        .tester{
+            text-decoration: underline;
+
+
+        }
+        .center{
+            text-align: center;
+
+
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+            padding: 30px;
+        }
+        .graph{
+            text-align: center;
+
+        }
+        .highlights {
+            background-color: yellow;
+            padding: 2px 5px;
+            font-weight: bold;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="#video">Meeting The Brief</a>
+        <a href="#investigation">Investigation</a>
+        <a href="#plan and design">Plan and Design</a>
+        <a href="#create">Create</a>
+        <a href="#evaluation">Evaluation</a>
+        <a href="#reference">Reference</a>
+        <a href="#wordcounttable">Word Count Table</a>
+        
+        
+    </div>
+
+<div class="content">
+
+
+
+<div class="container">
+
+     <h1 id="video">Meeting The Brief</h1>
+        
+        <video width="800" controls>
+            <source src="Meeting The Brief.mp4" type="video/mp4">
+            Video Not Supported
+        </video>
+              
+    </div>
+
+<div class="container">
+    <h1 id="investigation">Investigation</h1>
+    
+    <h2>Thematic Brief Research and Context</h2>
+    <p>The topic I chose to investigate is housing in Ireland, which I believe is one of the most concerning social problems in Irish society. Much like the general election debates on RTE a few months ago, where different political parties discussed how to address the ongoing housing issues, these were the highlights and captured the most public attention.</p>
+
+    <p>According to the Parliamentary Budget Office (PBO) report on Housing Affordability for Private Household Buyers in Ireland<span style="color: #0a64ad;"> [1] [2]</span>, between 2011-2022, the population grew by 560,887, while the housing stock increased by only 117,276 units.</p>
+
+    <p>Sources: 
+        <a href="https://www.socialjustice.ie/article/addressing-irelands-housing-crisis-urgent-policy-reforms-needed" target="_blank">Social Justice Ireland</a> | 
+        <a href="https://data.oireachtas.ie/ie/oireachtas/parliamentaryBudgetOffice/2023/2023-10-05_housing-affordability-for-private-household-buyers-in-ireland_en.pdf" target="_blank">Parliamentary Budget Office Report</a>
+    </p>
+
+    <div class="image-container">
+        <img src="img/HCO Data Image .png" alt="Housing Crisis Data Visualization image">
+    </div>
+
+    <h2>My Interactive System: Housing Data Hub</h2>
+    <p>The “Housing Data Hub” I created is an accessible interactive information system providing insights into the current housing problem. This system aims to raise awareness and assist various end-users and stakeholders, such as individuals seeking housing solutions or NGOs needing intuitive information.</p>
+
+    <h2>Alternative Approaches Considered</h2>
+    <p>However, before I take this approach for my interactive information system, I have considered two alternative options. The first was an interactive map of Ireland, counties with higher housing prices are shown in a darker colour with detailed information on hover, This idea was rejected because the coding skill required is exceeding my level, so I chose to use Pygal graph instead. The second approach I considered was to create a rental listing website where users could browse and compare rental prices in different locations. It was rejected because similar platforms, like Daft.ie, already exist, and this approach wouldn’t address the deeper affordability and housing shortage issues.</p>
+
+    <h2>Data Collection and Analysis</h2>
+    <p>After I understood the reality of the problem, I started to find available data sets and any existing interactive information systems that could inspire my project. For example, I found a website made by the Irish government using the advance search function on Google.<span style="color: #0a64ad;"> [3]</span> Extensive data can be downloaded and ready-made graphs are available on this website. It became the starting point of creating my interactive system. I downloaded the “ House price overburden” data, which measures the percentage of the population that the total cost of housing exceeds 40% of their disposable income. The data is in CSV form so I can process and visualize it further using Python.</p>
+    <p>Sources: 
+        <a href=" https://www.housingagency.ie/" target="_blank">housingagency.ie</a> | 
+    </p>
+    <div class="image-container">
+        <img src="img/Google Advance Search.png" alt="Google Advance Search image">
+    </div>
+    <h2>Findings and Insights</h2>
+    <p>I found many interesting insights during my further research into the topic. I noticed the HCO rate for households without mortgages in the year 2020 is significantly higher than in other years compare to household with mortgages. Logically, households without loans should be spending a smaller percentage of their disposable income on housing compared to those with loan obligations. Upon further research, I found that the COVID-19 pandemic was the key driver behind this phenomenon.<span style="color: #0a64ad;"> [4] [5]</span> </p>
+
+    <p>Sources:
+        <a href="https://tradingeconomics.com/ireland/housing-cost-overburden-rate-owner-no-outsting-mortgage-or-housing-loan-eurostat-data.html" target="_blank">Trading Economics</a> |
+        <a href="http://files.nesc.ie/nesc_background_papers/c19-housing.pdf" target="_blank">NESC Report</a>
+    </p>
+
+    <div class="image-container">
+        <img src="img/Cover.png" alt="PDF Cover image">
+        <img src="img/wroking paper series.png" alt="Data Insights Image">
+
+    </div>
+</div>
+<div class="container">
+    <h1 id="plan and design">Plan and Design</h1>
+    <div class="image-container">
+        <img src="img/Lccs Software Development .png" alt="LCCS Software Development Six Stages image">
+    </div>
+    <p>My project follows the Leaving Cert Computer Science Software Development Cycle, incorporating both waterfall and algae approaches. It uses a waterfall approach because the requirements and marking scheme remain the same throughout the project development cycle, and it’s also adopted an agile approach as I frequently reiterate back to previous stages to change my investigation ideas or fix any coding bugs I made during the create stage.<span style="color: #0a64ad;"> [9] [10]</span> </p>
+    <div class="image-container">
+        <img src="img/wireframe.png" alt="Wireframe image">
+    </div>
+    <h2 class="graph">Artefact System Flowchart</h2>
+    <div class="image-container">
+        <img src="img/artefact system flowchart.png" alt="system flowchart image">
+    </div>
+    <h2 class="graph">Python Sorting Flowchart</h2>
+    <div class="image-container">
+        <img src="img/python sorting flowchart .png" alt="python flowchart image">
+    </div>
+    <h2 class="graph">Python Visualization Flowchart</h2>
+    <div class="image-container">
+        <img src="img/python visualization flowchart.png" alt="visualization flowchat image">
+    </div>
+    <h2>Basic Requirements</h2>
+    <ol>
+        <li><strong>Collect and Prepare Data</strong>
+            <ol type="a">
+                <li>I will download the data needed for my project from different publicly available datasets, such as Central Statistics Office.</li>
+                <li>There will be elements I don’t want or distorted information in the raw data downloaded, so I will clean the data into suitable formats using Python on Thonny IDE. Additionally, I will merge and separate 7 years of data into a single CSV file for further processing.<span style="color: #0a64ad;"> [19]</span></li>
+            </ol>
+        </li>
+        <li><strong>Data analytics and Visualization</strong>
+            <ol type="a">
+                <li>I will download the Pygal module to the Local Python3, for different data sets visualization. Three SVG graphs will be generated (Bar, Line, Pie)</li>
+                <li>Each graph will be clearly labeled with titles, axis labels, and legends. Example title: House price over time by area</li>
+                <li>Both lists and dictionaries will be used as data structures during data analysis.</li>
+            </ol>
+        </li>
+        <li><strong>Basic Interactive Information System Interface </strong>
+            <ol type="a">
+                <li>The web-based interface called “Housing Data Hub” will consist of three different interactive SVG graphs, a housing recommendation tool, and a form that will allows users to enter their personal information and budget to find flatmates. <span style="color: #0a64ad;"> [13] [14]</span></li>
+                <li>Three Pygal Graphs will provide visualization to users, and graphs will be easily switched by clicking buttons on the side menu. <span style="color: #0a64ad;"> [16]</span></li>
+            </ol>
+        </li>
+    </ol>
+    <h2>Advance Requirements</h2>
+    <ol>
+        <li>Pygal graphs are fully interactive, allowing users to hover for details and filtering specific data.</li>
+        <li>A form will be created to allow users to enter their personal information and budget to find flatmates.
+            <ol type="a">
+                <li>The data collected will consist of three data types: Name (str), Budget (float), Birthday (date).</li>
+                <li>The user information will be stored in Google Firebase.<span style="color: #0a64ad;"> [20]</span></li>
+                <li>Submitted data will be displayed on a separate page in table form. In this way, users will be able to contact flatmates who suit their location and budget.</li>
+            </ol>
+        </li>
+        <li>A rent affordability tool will be on a separate web page. It compares the user budget to the average monthly rent in the location and returns a simple yes or no answer.</li>
+    </ol>
+
+</div>
+
+<div class = "container">
+    <h1 id="create">Create</h1>
+    <h2 class="log">Development Progress Log</h2>
+
+    <h2>Week 1 (December 2024)</h2>
+    <ul>
+        <li>The First Day, introduction to the project brief, idea generation, and brainstorming</li>
+        <li>After an initial search, I chose Housing as my investigation topic.</li>
+        <li>By using Google Advance Search, I found a publicly available dataset called “The Housing Agency”, it became the starting point for my research.</li>
+    </ul>
+
+    <h2>Week 2 (January 2025)</h2>
+    <ul>
+        <li>Christmas Break, no work took place. </li>
+    </ul>
+
+    <h2>Week 3 (January 2025)</h2>
+    <ul>
+        <li>Investigation 1st draft, didn’t include a discussion of two alternative project ideas that were considered but rejected and an Identification of potential stakeholders and end-users.</li>
+        <li>Investigation 2nd draft, missing parts were added however exceeded. However, I failed to adhere to 400 words requirement.</li>
+        <li>Investigation 3rd draft, words count under the limit and all essential parts included after adjustment.</li>
+    </ul>
+
+    <h2>Week 4 (January 2025)</h2>
+    <ul>
+        <li>Plan and Design 1st draft</li>
+        <li>I create the wireframe for my system with the tool “Whimsical”</li>
+        <li>I create the flowchart for my system with the tool “drawit.io”</li>
+    </ul>
+
+    <h2>Week 5 (January 2025)</h2>
+    <ul>
+        <li>Plan and Design 2nd draft, fixed some typos and added wireframe and flowchart to the document.</li>
+        <li>Plan and Design 3rd draft, add flowcharts for python data extracting sorting visualization.</li>
+    </ul>
+
+    <h2>Week 6 (February 2025)</h2>
+    <ul>
+        <li>Create stage started, coding ………</li>
+        <li>Data downloaded from different public datasets.</li>
+        <li>Cleaned CSV files made, all information cleaned and sorted using Python.</li>
+        <li>Frame of the website made, adjust background color and CSS.</li>
+    </ul>
+
+    <h2>Week 7 (February 2025)</h2>
+    <ul>
+        <li>I was filling information into my interactive information system, adding SVG graphs, a Recommendation tool, and test the Firebase functionality. However, the installation of the Pygal module failed, so the graphs weren’t interactable at the beginning with several other problems encountered. I had been overly optimistic about my coding skills, so I decided to iterate back to the previous section of the create stage to make the code more concise. </li>
+        <li>Start testing process, functional and unit testing. </li>
+        <li>Unit test complete, test table created. </li>
+        <li>Functional test complete, test table created. Final refine and optimize the overall visual layout of the webpage. </li>
+    </ul>
+
+    <h2>Week 8 (February 2025)</h2>
+    <ul>
+        <li>Mid -Term Break, no work took place</li>
+    </ul>
+
+    <h2>Week 9 (February 2025)</h2>
+    <ul>
+        <li>Create 2nd draft, adjust contents to suit the marking scheme requirements. Evaluate in general rather than break into different parts.</li>
+        <li>Write pseudocode for algorithms</li>
+        <li>Evaluation 1st Draft completed, exceeded 300 words limit.</li>
+        <li>Review Evaluation 2nd Draft. Adding more comments on the source documentation for any modules or coding methods I used. </li>
+        <li>add links and code comments regarding how to embed the SVG files. </li>
+        <li>Create 3rd draft. The initial algorithm I chose wasn’t analytical, which is not what the marking scheme asked for.  So I had to redo this section. I decided to use the decision algorithm from the rental budget recommendation tool on my website as the new algorithm to discuss. </li>
+        <li>Evaluation 3rd draft. Redo the whole thing because I was evaluating myself and how I fulfilled the requirements ,instead of evaluating the artefact and how it meets the requirements, identifying the successes and areas for future improvement. </li>
+    </ul>
+
+    <h2>Week 10 (March 2025)</h2>
+    <ul>
+        <li>Started to convert reports from Word documents to HTML webpage.</li>
+        <li>Reorganize project folder in line with page 11 in the brief.</li>
+        <li>Added comments about link to any modules/packages that I used with documentation that explains what am I doing. </li>
+        <li>Add an error handling process to the recommendation tool of my interactive information system, that preventing users from entering 0 as their monthly rental budget.</li>
+        <li>Enhance the recommendation tool so it can tell the user how far their budget is away from the average, rather than the previous version only provide a yes or no answer leave the user unclear about their affordability. </li>
+        <li>Added Expected outcomes and Test ID Numbers to the test tables.</li>
+        <li>IEEE Style Reference </li>
+    </ul>
+    
+    <h2>Week 11 (March 2025)</h2>
+    <ul>
+        <li>Make Word Count Table</li>
+        <li>Record meeting the brief Video</li>
+        <li>Final check and wrap up the project</li>
+    </ul>
+
+    <h2>Week 12 (March 2025)</h2>
+    <ul>
+        <li>Project submitted to the state examination commission before the deadline. </li>
+    </ul>
+
+
+    <h2 class="log">Problems Encountered</h2>
+
+        <p>1. Pygal is the visualization tool for my project, and it’s an external tool package that is not embedded in the Thonny IDE. Initially, I attempted to download it within the IDE, but I found it missing from the package library. To resolve this, I search online using resources like YouTube and Google<span style="color: #0a64ad;"> [15] [19]</span>, and found that I need to input the pip install Pygal command into the CMD console on my device, not directly into the Thonny shell. This solution solved my issue and made my graphs interactable.<p>
+        <p>Sources: 
+            <a href="https://www.pygal.org/en/stable/installing.html" target="_blank">Pygal Module Installation Tutorial</a> | 
+        </p>
+        <div class="image-container">
+            <img src="img/pygal install image.png" alt="Pygal Shall Screenshot">
+        </div>
+        
+        <p>2. When visualizing Housing Cost Overburden data into a bar chart, my initial idea was to use For Loops and Panda to extract Housing Cost Overburden data for six years from a large CSV file and visualize it to a single graph. However, the coding skills required were beyond my current abilities and understanding. Instead, I applied one of the computational thinking techniques --- Decomposition, which involves breaking problems down into smaller components so they can be tackled easier. In my project, the code became much more concise and easier to understand by dividing the large graph into six smaller graphs, each representing the data for a specific year. I was able to locate the relevant data for each year by using the row position and index in the CSV file, as the data was organized to repeat every four rows.</p>
+        
+        <div class="image-container">
+            <img src="img/HCB Error Image 1.png" alt="HCB Error Screenshot">
+        </div>
+        
+        <p>(Before) For example, HCB data for 2019 is stored together within a large csv file containing data from 2017 to 2022, it was difficult to visualize them together in a bar chart.</p>
+        
+        <div class="image-container">
+            <img src="img/HCB Error Image 2.png" alt="HCB Error Screenshot">
+        </div>
+        
+        <p>(After) HCB data for 2019 is isolated for further visualization to a bar chart containing data only for that year.</p>
+
+    <h2 class="log">Program Testing</h2>
+
+    <h2 class="tester" >Unit Testing</h2>
+    <p>Objective: helps to eliminate the risk of having bugs in code by break the software code to each unit, validate each unit and check whether they are performing as expected.</p>
+    <h2>Webpage Display Test</h2>
+
+    <ul>
+        <li><span class="highlights">showHousePrices() Function</span></li>
+     </ul>
+
+     <div class="image-container">
+        <img src="img/showHousePrices.png" alt="House Prices Function image">
+    </div>
+
+    <p class="center">Verify that svgContainer_1 is displayed while others are hidden.</p>
+    
+    <ul>
+        <li><span class="highlights">showHCB() Function</span></li>
+     </ul>
+
+     <div class="image-container">
+        <img src="img/showHCB.png" alt="HCB data image">
+    </div>
+
+    <p class="center">Verify that svgContainer_2 is displayed while others are hidden.</p>
+
+    <ul>
+        <li><span class="highlights">showAverageRent() Function</span></li>
+     </ul>
+
+     <div class="image-container">
+        <img src="img/ShowAverageRent.png" alt="Average Rent Image">
+    </div>
+
+    <p class="center">Verify that svgContainer_3 is displayed while others are hidden.</p>
+
+    <ul>
+        <li><span class="highlights">showForm()Function </span></li>
+     </ul>
+
+     <div class="image-container">
+        <img src="img/showForm.png" alt="Form Function Image">
+    </div>
+
+    <p class="center">Verify that svgContainer_4 is displayed while others are hidden.</p>
+    
+    <ul>
+        <li><span class="highlights">showRec() Function</span></li>
+     </ul>
+
+     <div class="image-container">
+        <img src="img/recommendation.png" alt="recommendation tool image">
+    </div>
+
+    <p class="center">Verify that svgContainer_5 is displayed while others are hidden.</p>
+
+    <ul>
+        <li><span class="highlights">showTable() Function</span></li>
+     </ul>
+
+     <div class="image-container">
+        <img src="img/showTable.png" alt="Matching Table Image">
+    </div>
+
+    <p class="center">Verify that svgContainer_6 is displayed while others are hidden.</p>
+
+
+    <h2>Test Table</h2>
+
+    <div class="image-container">
+        <img src="img/First Test Table.png" alt="First Test Table">
+    </div>
+
+
+    <h2 class="tester" >Functional Testing</h2>
+    <p>Objective: validates the software system against functional requirements, test each of the individual functions or features of a completed system.</p>
+    <p> I invited my friends as tester during the level of functional testing.</p>
+
+
+
+    <h2>Form Submission Test</h2>
+    <h3>Input Validation</h3>
+    <ul>
+        <li>Test E-mail format validation (example@domain.com) </li>
+        <li>Test that Budget only accepts numeric values.</li>
+        <li>Test that Date of Birth only accepts Char values.</li>
+    </ul>
+    <div class="image-container">
+        <img src="img/form submission picture.png" alt="Form Submission Test">
+    </div>
+    <p>The validation process is completed by hardcoding the input box, so that only certain values can be accepted. </p>
+
+    <h2>Test Table</h2>
+
+    <div class="image-container">
+        <img src="img/Seconed Test Table.png" alt="Test Table Image">
+    </div>
+
+
+
+    <h2>Data Submission Test</h2>
+    <ul>
+        <li>An alert box displays a confirmation message if the data is correctly pushed to the Firebase. </li>
+        <li>If the alert box doesn't pop out during the uploading process, the user will be aware of the error. </li>
+    </ul>
+
+
+    <div class="image-container">
+        <img src="img/Firebase Screenshot 1.png" alt="Firebase">
+    </div>
+
+    <div class="image-container">
+        <img src="img/Firebase Screenshot 2.png" alt="pop up message">
+    </div>
+    
+    <h2>Test Table</h2>
+
+
+    <div class="image-container">
+        <img src="img/Third Test Table.png" alt="Test Table Screenshot">
+    </div>
+    
+
+
+    <h2 class="log">Algorithm</h2>
+    <h2>Budget Recommendation Tool</h2>
+    <p>When the users use the budget recommendation tool on the housing data hub, they will be prompted to enter their desired rental location and budget. These two arguments are processed by the JavaScript algorithm outlined below. </p>
+
+    <p>Firstly, the algorithm determines the selected location. For example, the letter “D” refers to the Dublin Area. Next, the algorithm executes the relevant code section based on the user’s location. The user’s budget is compared to the average monthly rent from my analytic data for that specific area.  If the user’s budget is lower than the average rent, they will receive a message suggesting them to consider cheaper areas and how far their budget is away from the average to provide a better clarity about their affordability. Conversely, If the user’s budget is higher than the average rent, a message will inform that they should be able to afford the rent. </p>
+
+    <p>Supplementary recommendation:</p>
+
+    <p>If the user's budget is close to or able to afford the rent in the area (budget difference <= 30% of the average rent ), prompt them to learn negotiation skills with landlords.</p>
+
+    <p>If the user's budget has a large gap compared to the average rent in the area (budget difference > 30% of the average rent ), prompt them to get assistance from government subsidy projects or low-rent housing policies.</p>
+
+    <p>Additionally, the algorithm includes an error-handling process that triggers an error message in the event of invalid inputs and prevents users from entering their budget as €0. </p>
+
+
+
+    <div>
+        <img src="img/algorithm 1.png" alt="first algorithm screenshot">
+    </div>
+
+    <div>
+        <img src="img/algorithm 2.png" alt="second algorithm screenshot">
+    </div>
+    
+    <div>
+        <img src="img/algorithm 3.png" alt="second algorithm screenshot">
+    </div>
+
+    <h2>Pseudocode</h2>    
+    <div class="image-container">
+        <img src="img/Pseudocode.png" alt="First Pseudocode Screenshot">
+    </div>
+
+    
+
+
+</div> 
+
+
+
+<div class="container">
+    <h1 id="evaluation">Evaluation</h1>
+    <h2>Basic Requirements</h2>
+    <ol>
+        <li><strong>Collect and Prepare Data</strong>
+
+        <p>The artefact meets these requirements because it successfully integrates three datasets:  House Prices Overtime by area from the Central Statistics Office, Housing Cost Overburden spending as percentage of disposable income from The Housing Agency, and Average Rent of the Dublin area from DATA.GOV.IE.<span style="color: #0a64ad;"> [18]</span></p>
+        <p>In addition, Unnecessary symbols and irrelevant data were cleaned to ensure accuracy, with clear evidence provided. </p>
+        </li>
+        
+        <li><strong>Data analytics and Visualization</strong>
+            
+        <p>Three fully interactable SVG graphs (Line, Bar, Pie) with each representing different key aspects were generated and embedded on the artefact using the Pygal module in Python, each graph has been clearly labeled with titles, axis labels, and legends. In terms of analytics, both lists and dictionaries has been used as data structures.</p>
+        
+        </li>
+        
+
+        <li><strong>Basic Interactive Information System Interface </strong>
+            
+                <p>The artefact is a web - based interactive system provide the public information about my chosen topic --- Housing Problem in Ireland. </p>
+                <p>The system allows users to switch between different graphs via sidebar buttons. </p>
+        </li>
+        
+
+    </ol>
+
+    <h2>Advance Requirements</h2>
+    <p>The artefact satisfied each advanced requirements because…</p>
+    <ul>
+        <li>Embedded graphs are fully interactive, allowing users to hover for details and filter specific data.</li>
+        <li>There is both a rental budget recommendation tool and a form to collect user data for flatmate matching. Multiple types of user inputs are stored in the Google Firebase and display user inputs in a structured table.</li>
+        
+    </ul> 
+
+    <h2>Areas For Improvement</h2>
+    <p>The flatmates matching form may raise privacy ethical concerns because anyone can view the personal information submitted by others, which could lead to its illegal use. This issue could be addressed by adding a prompt that asks users to enter a pseudonym instead of their real name.  </p>
+    <p>Furthermore, this artefact still has substantial room for improvement by adding more features. For example, AI tools could be integrated into the Housing Data Hub, where machine learning will enable the system to analyse historical data, inflation rates, and market demand. Users could input their desired rental location with a timeframe to see the expected price in the future, thus helping them make better decisions. </p>
+
+
+</div>
+
+<div class="container">
+    <h1 id="reference">Reference</h1>
+    
+    <p>[1] “Addressing Ireland’s housing crisis: Urgent policy reforms needed | Social Justice Ireland,” Social Justice Ireland, May 29, 2024. 
+    <a href="//www.socialjustice.ie/article/addressing-irelands-housing-crisis-urgent-policy-reforms-needed" target="_blank">//www.socialjustice.ie/article/addressing-irelands-housing-crisis-urgent-policy-reforms-needed</a>
+    </p>
+
+    <p>[2] “Housing affordability for private household buyers in Ireland,” Parliamentary Budget Office, 2023. [Online]. Available:
+    <a href="//data.oireachtas.ie/ie/oireachtas/parliamentaryBudgetOffice/2023/2023-10-05_housing-affordability-for-private-household-buyers-in-ireland_en.pdf" target="_blank">data.oireachtas.ie/ie/oireachtas/parliamentaryBudgetOffice/2023/2023-10-05_housing-affordability-for-private-household-buyers-in-ireland_en.pdf</a>
+    </p>
+
+    <p>[3] Eurostat/EU-SILC, “Housing Cost Overburden,” The Housing Agency.
+    <a href="https://www.housingagency.ie/data-hub/housing-cost-overburden" target="_blank">https://www.housingagency.ie/data-hub/housing-cost-overburden</a> 
+    </p>
+
+    <p>[4] Trading Economics Report
+    <a href="https://tradingeconomics.com/ireland/housing-cost-overburden-rate-owner-no-outsting-mortgage-or-housing-loan-eurostat-data.html" target="_blank">https://tradingeconomics.com/ireland/housing-cost-overburden-rate-owner-no-outsting-mortgage-or-housing-loan-eurostat-data.html</a> 
+    </p>
+
+    <p>[5] N. Cahill, “The implications of COVID-19 for housing in Ireland,” National Economic And Social Council, Jun. 2020. [Online]. Available: 
+    <a href="http://files.nesc.ie/nesc_background_papers/c19-housing.pdf" target="_blank">http://files.nesc.ie/nesc_background_papers/c19-housing.pdf</a>
+    </p>
+
+    <p>[6] Central Statistics Office, Department of Housing, Local Government and Heritage, and Statistics & Data Analytics Unit, “HSA06 Average price of houses.(accessed Dec. 23, 2024).
+    <a href="https://data.cso.ie/table/HSA06" target="_blank">"https://data.cso.ie/table/HSA06"</a>
+    </p>
+
+    <p>[7] Central Statistics Office, “RIA02 - RTB Average Monthly Rent Report.” 
+    <a href="https://data.gov.ie/dataset/ria02-rtb-average-monthly-rent-report" target="_blank">"https://data.gov.ie/dataset/ria02-rtb-average-monthly-rent-report"</a>
+    </p>
+     
+    <p>[8] “Canva Colour Wheel.” 
+    <a href="https://www.canva.com/colors/color-wheel/ " target="_blank">"https://www.canva.com/colors/color-wheel/"</a>
+    </p>
+
+    <p>[9] "Flowchart Drawing Tool"
+        <a href="https://www.drawio.com/" target="_blank">"https://www.drawio.com/"</a>
+    </p>
+
+    <p>[10] “Wireframe Creating Tool ”
+        <a href="https://whimsical.com/" target="_blank">"https://whimsical.com/"</a>
+    </p>
+    
+    <p>[11] “W3Schools.com. Fonts”
+        <a href="https://www.w3schools.com/cssref/css_websafe_fonts.php" target="_blank">"https://www.w3schools.com/cssref/css_websafe_fonts.php"</a>
+    </p>
+
+    <p>[12] “W3Schools.com. Conditional Logic Tutorial”
+        <a href="https://www.w3schools.com/js/js_if_else.asp" target="_blank">"https://www.w3schools.com/js/js_if_else.asp"</a>
+    </p>
+
+    <p>[13] “W3Schools.com. HTML”
+        <a href="https://www.w3schools.com/html/" target="_blank">"https://www.w3schools.com/html/"</a>
+    </p>
+
+    <p>[14] “Embedding in a web page — pygal 2.0.0 documentation.”
+        <a href="https://www.pygal.org/en/stable/documentation/web.html" target="_blank">"https://www.pygal.org/en/stable/documentation/web.html"</a>
+    </p>
+
+    <p>[15] “Installing — pygal 2.0.0 documentation.”
+        <a href="https://www.pygal.org/en/stable/installing.html" target="_blank">"https://www.pygal.org/en/stable/installing.html</a>
+    </p>
+
+    <p>[16] “Styles — pygal 2.0.0 documentation.” 
+        <a href=https://www.pygal.org/en/3.0.0/documentation/styles.html target="_blank">"https://www.pygal.org/en/3.0.0/documentation/styles.html"</a>
+    </p>
+
+    <p>[17] “ADLAM Display - Google Fonts,”
+        <a href="https://fonts.google.com/specimen/ADLaM+Display" target="_blank">"https://fonts.google.com/specimen/ADLaM+Display"</a>
+    </p>
+
+    <p>[18] “GeeksforGeeks, “with statement in Python,” GeeksforGeeks, Mar. 03, 2025”
+        <a href="https://www.geeksforgeeks.org/with-statement-in-python/" target="_blank">"https://www.geeksforgeeks.org/with-statement-in-python/"</a>
+    </p>
+     
+    <p>[19] “YouTube. Pygal Module Installation ”
+        <a href="https://youtube.com/shorts/mdxizwKE-Z8?si=rxifoQJkZDGDX8tW:" target="_blank">"https://youtube.com/shorts/mdxizwKE-Z8?si=rxifoQJkZDGDX8tW"</a>
+    </p>
+
+    <p>[20] “Firebase - Environment Setup.”
+        <a href=" https://www.tutorialspoint.com/firebase/firebase_environment_setup.htm" target="_blank"> https://www.tutorialspoint.com/firebase/firebase_environment_setup.htm</a>
+    </p>
+
+    <p>[21] “IEEE citation style guildelines and examples,” Scribbi. 
+        <a href="https://www.scribbr.com/ieee/ieee-in-text-citation/ " target="_blank">"https://www.scribbr.com/ieee/ieee-in-text-citation/" </a>
+    </p>
+
+    <p>[22] “IEEE Citation Generator” Scribbi. 
+        <a href=http://scribbr.com/citation/generator/ target="_blank">"http://scribbr.com/citation/generator/"</a>
+    </p>
+    
+</div>
+
+<div class="container">
+
+<h1 id="wordcounttable">Word Count Table</h1>
+<div class="image-container">
+    <img src="img/Word Count Table.png " alt="Word Count Table">
+</div>
+
+</div>
+
+
+</body>
+</html>
